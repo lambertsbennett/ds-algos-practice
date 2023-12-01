@@ -9,3 +9,4 @@ def reverse(input_string: str) -> str:
 
 assert "olleh" == reverse("hello")
 assert "racecar" == reverse("racecar")
+assert "ereht olleh" == reverse("hello there")
