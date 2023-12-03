@@ -24,10 +24,10 @@ def merge_sorted_arrays(arr1: List, arr2: List) -> List:
 
 
 class ListIterator():
-    def __init__(self, input_list):
-        self.arr = input_list
-        self.done = False
-        self.current_ind = 0
+    def __init__(self, input_list: List):
+        self.arr: List = input_list
+        self.done: bool = False
+        self.current_ind: int = 0
     
     def next(self):
         self.current_ind += 1
@@ -42,3 +42,4 @@ assert merge_sorted_arrays([0,1,2], [3,4,5]) == [0,1,2,3,4,5]
 assert merge_sorted_arrays([0,3,5], [1,2,6]) == [0,1,2,3,5,6]
 assert merge_sorted_arrays([-1, 4, 5], [1, 2, 3, 4]) == [-1, 1, 2, 3, 4, 4, 5]
 assert merge_sorted_arrays([1,2,3,4,5], [-2, -1, 10]) == [-2,-1,1,2,3,4,5,10]
+assert merge_sorted_arrays(['a', 'b', 'c'], ['d', 'e', 'f']) == ['a', 'b', 'c', 'd', 'e', 'f']
