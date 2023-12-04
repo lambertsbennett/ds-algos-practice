@@ -12,3 +12,4 @@ def get_first_recurring_char(input_str: str) -> str:
 assert get_first_recurring_char("racecar") == "c"
 assert get_first_recurring_char("The answer") == "e"
 assert get_first_recurring_char("I am happy") == "a"
+assert get_first_recurring_char("I am in") == "i"
