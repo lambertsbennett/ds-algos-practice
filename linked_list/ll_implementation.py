@@ -93,3 +93,18 @@ def test_linked_list_traverse():
     assert node.value == 5
     node = ll.traverse(0)
     assert node.value == 6
+
+
+def test_linked_list_insert():
+    ll = LinkedList(5)
+    ll.prepend(6)
+    ll.insert(1, 4)
+    assert ll.traverse(1).value == 4
+
+
+def test_linked_list_remove():
+    ll = LinkedList(5)
+    ll.prepend(6)
+    ll.remove(0)
+    assert ll.head.value == 5
+    assert ll.tail.value == 5
