@@ -72,9 +72,24 @@ class LinkedList:
         return current_node
 
 
-ll = LinkedList(5)
-ll.append(6)
-ll.prepend(4)
-ll.insert(1, 4.5)
-ll.remove(1)
-ll.traverse(stop_index=None, v=True)
+def test_linked_list_append():
+    ll = LinkedList(5)
+    ll.append(6)
+    assert ll.head.value == 5
+    assert ll.tail.value == 6
+
+
+def test_linked_list_prepend():
+    ll = LinkedList(5)
+    ll.prepend(6)
+    assert ll.head.value == 6
+    assert ll.tail.value == 5
+
+
+def test_linked_list_traverse():
+    ll = LinkedList(5)
+    ll.prepend(6)
+    node = ll.traverse(1)
+    assert node.value == 5
+    node = ll.traverse(0)
+    assert node.value == 6
