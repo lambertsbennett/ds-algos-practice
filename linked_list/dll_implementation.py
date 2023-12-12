@@ -64,7 +64,7 @@ class DLinkedList:
             self.length -= 1
         else:
             upstream_node = self.traverse(index - 1)
-            downstream_node = self.traverse(index + 1)
+            downstream_node = upstream_node.dref.dref
             upstream_node.dref = downstream_node
             downstream_node.uref = upstream_node
             self.length -= 1
@@ -115,4 +115,12 @@ def test_dlinked_list_remove():
     dll.prepend(6)
     dll.remove(0)
     assert dll.head.value == 5
+    assert dll.tail.value == 5
+
+def test_dlinked_list_remove_middle():
+    dll = DLinkedList(5)
+    dll.prepend(6)
+    dll.prepend(7)
+    dll.remove(1)
+    assert dll.traverse(1).value == 5
     assert dll.tail.value == 5

@@ -57,7 +57,7 @@ class LinkedList:
             self.length -= 1
         else:
             upstream_node = self.traverse(index - 1)
-            downstream_node = self.traverse(index + 1)
+            downstream_node = upstream_node.ref.ref
             upstream_node.ref = downstream_node
             self.length -= 1
 
@@ -107,4 +107,13 @@ def test_linked_list_remove():
     ll.prepend(6)
     ll.remove(0)
     assert ll.head.value == 5
+    assert ll.tail.value == 5
+
+
+def test_linked_list_remove_middle():
+    ll = LinkedList(5)
+    ll.prepend(6)
+    ll.prepend(7)
+    ll.remove(1)
+    assert ll.traverse(1).value == 5
     assert ll.tail.value == 5
