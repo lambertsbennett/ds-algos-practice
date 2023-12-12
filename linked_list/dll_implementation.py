@@ -124,3 +124,11 @@ def test_dlinked_list_remove_middle():
     dll.remove(1)
     assert dll.traverse(1).value == 5
     assert dll.tail.value == 5
+
+def test_dlinked_list_remove_tail():
+    dll = DLinkedList(5)
+    dll.prepend(6)
+    dll.prepend(7)
+    dll.remove(2)
+    assert dll.traverse(1).value == 6
+    assert dll.tail.value == 6

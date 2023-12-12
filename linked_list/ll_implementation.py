@@ -117,3 +117,11 @@ def test_linked_list_remove_middle():
     ll.remove(1)
     assert ll.traverse(1).value == 5
     assert ll.tail.value == 5
+
+def test_linked_list_remove_tail():
+    ll = LinkedList(5)
+    ll.prepend(6)
+    ll.prepend(7)
+    ll.remove(2)
+    assert ll.traverse(1).value == 6
+    assert ll.tail.value == 6
