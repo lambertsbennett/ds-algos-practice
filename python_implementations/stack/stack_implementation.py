@@ -37,7 +37,7 @@ class Stack:
             self.top = new_node
             self.length += 1
 
-    def pop(self):
+    def pop(self) -> StackNode:
         if self._is_empty():
             return None
         else:
