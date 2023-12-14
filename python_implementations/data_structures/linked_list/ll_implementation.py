@@ -7,7 +7,7 @@ class ListNode:
     def next(self):
         return self.ref
 
-    def __str__(self) -> str:
+    def __repr__(self):
         return f"value: {self.value}, ref: {self.ref}"
 
 
