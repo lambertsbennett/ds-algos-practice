@@ -5,6 +5,7 @@ class Graph:
 
     def add_vertex(self, node) -> None:
         self.adjacency_list.setdefault(node, [])
+        self.num_nodes += 1
 
     def add_edge(self, node1, node2) -> None:
         self.adjacency_list[node1].append(node2)
