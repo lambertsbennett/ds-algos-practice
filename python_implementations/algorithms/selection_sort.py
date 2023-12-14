@@ -1,12 +1,11 @@
 def selection_sort(arr: list) -> list:
     # Last iteration is unnecessary because its sorted by then.
     for i in range(len(arr) - 1):
-        min_val = (arr[i], i)
+        min_val = i
         for j in range(i, len(arr)):
-            if arr[j] < min_val[0]:
-                min_val = (arr[j], j)
-        _ = arr.pop(min_val[1])
-        arr.insert(i, min_val[0])
+            if arr[j] < arr[min_val]:
+                min_val = j
+        (arr[i], arr[min_val]) = (arr[min_val], arr[i])
     return arr
 
 
