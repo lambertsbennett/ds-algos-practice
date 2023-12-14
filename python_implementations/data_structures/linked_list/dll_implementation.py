@@ -10,7 +10,7 @@ class DListNode:
     def next(self):
         return self.dref
 
-    def __str__(self) -> str:
+    def __repr__(self):
         return f"value: {self.value}"
 
 
